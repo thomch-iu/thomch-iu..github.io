@@ -1,0 +1,27 @@
+<div class="section breadcrumbs">
+    <div class="row">
+        <div class="layout">
+            <ul itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+                    <a href="{{ site.baseurl }}" itemprop="item"><span itemprop="name">Home</span></a>
+                    <meta content="1" itemprop="position" />
+                </li>
+                {% assign crumbs = page.url | split: '/' %}
+                {% for crumb in crumbs offset: 1 %}
+                <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"
+                    class="{% if forloop.last %}current{% endif %}">
+                    <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{{site.baseurl}}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}"
+                        itemprop="item"><span itemprop="name">{{
+                            crumb | replace:'-',' ' | remove:'/index.html' | capitalize }}</span></a>
+                    <meta content="{{ forloop.index }}" itemprop="position" />
+                </li>
+
+                {% endfor %}
+
+                <!-- <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="../index.html" itemprop="item"><span itemprop="name">Pattern Library</span></a><meta content="2" itemprop="position"/></li>
+                        <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">Web Elements</span></a><meta content="3" itemprop="position"/></li>
+                        <li class="current" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><span itemprop="item name">Buttons</span><meta content="4" itemprop="position"/></li> -->
+            </ul>
+        </div>
+    </div>
+</div>

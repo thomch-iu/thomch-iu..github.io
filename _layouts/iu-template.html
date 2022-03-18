@@ -38,18 +38,17 @@
 
         <div id="branding-bar" class="iub" itemscope="itemscope" itemtype="http://schema.org/CollegeOrUniversity">
             <div class="row pad">
-                    <img src="//assets.iu.edu/brand/3.2.x/trident-large.png" alt="" />
-                    <p id="iu-campus">
-                        <a href="https://www.indiana.edu" title="Indiana University Bloomington">
-                            <span id="campus-name" class="show-on-desktop" itemprop="name">Indiana University Bloomington</span>
-                            <span class="show-on-tablet" itemprop="name">Indiana University Bloomington</span>
-                            <span class="show-on-mobile" itemprop="name">IU Bloomington</span>
-                        </a>
-                    </p>
+                <img src="//assets.iu.edu/brand/3.2.x/trident-large.png" alt="" />
+                <p id="iu-campus">
+                    <a href="https://www.indiana.edu" title="Indiana University Bloomington">
+                        <span id="campus-name" class="show-on-desktop" itemprop="name">Indiana University
+                            Bloomington</span>
+                        <span class="show-on-tablet" itemprop="name">Indiana University Bloomington</span>
+                        <span class="show-on-mobile" itemprop="name">IU Bloomington</span>
+                    </a>
+                </p>
             </div>
         </div>
-
-
 
         <!-- global toggles and search -->
 
@@ -75,22 +74,8 @@
         <div class="content-top">
 
             <!-- breadcrumbs -->
+            {% include breadcrumbs %}
 
-            <div class="section breadcrumbs">
-                <div class="row">
-                    <div class="layout">
-                        <ul itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
-                            <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
-                                <a href="../../index.html" itemprop="item"><span itemprop="name">Home</span></a>
-                                <meta content="1" itemprop="position" />
-                            </li>
-                            <!-- <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="../index.html" itemprop="item"><span itemprop="name">Pattern Library</span></a><meta content="2" itemprop="position"/></li>
-                                    <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">Web Elements</span></a><meta content="3" itemprop="position"/></li>
-                                    <li class="current" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><span itemprop="item name">Buttons</span><meta content="4" itemprop="position"/></li> -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <!-- optional: page-title -->
             <div class="section page-title">
                 <div class="row">
@@ -104,8 +89,8 @@
 
         <div class="main-content">
 
-                <!-- Page Content -->
-                {{ content }}
+            <!-- Page Content -->
+            {{ content }}
 
             <!-- optional: footer-call-to-action -->
         </div>
@@ -119,8 +104,8 @@
                             <a href="/index.html" itemprop="url" class="current-trail current-parent"><span
                                     itemprop="name">Home</span></a>
                         </li>
-                        <li class=""><a href="/industry-background/index.html" itemprop="url"
-                                class=""><span itemprop="name">Intro / Industry Background</span></a>
+                        <li class=""><a href="/industry-background/index.html" itemprop="url" class=""><span
+                                    itemprop="name">Intro / Industry Background</span></a>
                         </li>
 
                         <li class="">
@@ -133,7 +118,8 @@
                             <a href="/slides/index.html" itemprop="url" class=""><span itemprop="name">Slides</span></a>
                         </li>
                         <li class="">
-                            <a href="/references/index.html" itemprop="url" class=""><span itemprop="name">References</span></a>
+                            <a href="/references/index.html" itemprop="url" class=""><span
+                                    itemprop="name">References</span></a>
                         </li>
                         <li class="">
                             <a href="/about-us/index.html" itemprop="url" class=""><span itemprop="name">About
@@ -144,7 +130,6 @@
                 </nav>
             </div>
         </div>
-
 
     </main>
 
