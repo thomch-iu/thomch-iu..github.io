@@ -4,14 +4,12 @@ title: "Data Sources"
 ---
 
 <div class="extra-space bg-none section" id="content">
-        <div class="row">
+    <div class="row">
         <div class="layout">
             <div class="text">
-                <h2>Data Sources:</h2>
+                <h2>National Vulnerability Database (NVD)</h2>
                 <br>
-                <h3>National Vulnerability Database (NVD)</h3>
-                <br>
-                <h4>Overview</h4>
+                <h3>Overview</h3>
                 <ul>
                     <li>The NVD is a U.S. government repository of standards-based vulnerability management data.</li>
                     <li>The data comes from analysis of common vulnerabilities and exposures (CVE) records that has been published to the CVE dictionary.</li>
@@ -20,7 +18,7 @@ title: "Data Sources"
                     <li>The data includes security checklist references, security related software flaws, misconfigurations, product names and impact metrics pertinent to the electronic payment industry and beyond.</li>
                 </ul>
                 <br>
-                <h4>Collection Strategy:</h4>
+                <h3>Collection Strategy:</h3>
                 <ul>
                     <li>The application Postman was used to generate a client API call and dump the response into a JSON format.</li>
                     <!-- ADD IMAGE -->
@@ -30,12 +28,14 @@ title: "Data Sources"
                     <li>The script was created so that the API could be called programmatically each day to collect the data set and store into an AWS S3 bucket.</li>
                 </ul>
                 <br>
-                <h4>Summary Statistics:</h4>
+                <h3>Summary Statistics:</h3>
                 <ul>
                     <li>Records Collected: ~183,300</li>
                     <li>Coverage Dates: October 1988 - March 2022</li>
                 </ul>
-                <hr>
+                <br>
+                <h3>Sample Data:</h3>
+                <a href="#">Link</a>
             </div>
         </div>
     </div>
