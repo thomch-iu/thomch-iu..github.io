@@ -21,6 +21,94 @@ title: "Data Sources"
     <div class="row">
         <div class="layout">
             <h2>Summaries:</h2>
+            <!-- Shodan Summary Section -->
+            <h3>Shodan</h3>
+
+            <h4>Collection Strategy:</h4>
+            <ul>
+                <li>Accessed Shodan exploit database via API</li>
+                <li>Python script created to parse data and store as CSV file</li>
+                <li>Script to run daily and post data set to AWS S3 bucket</li>
+            </ul>
+
+            <h4>Amount Collected:</h4>
+            <ul>
+                <li>Over 1,500 records collected per data set</li>
+            </ul>
+
+            <h4>Coverage Dates:</h4>
+            <ul>
+                <li>January 2012 to Current</li>
+            </ul>
+
+            <hr />
+
+            <!-- NVD Summary Section -->
+            <h3>Shodan</h3>
+
+            <h4>Collection Strategy:</h4>
+            <ul>
+                <li>Accessed NVD data via API</li>
+                <li>Python script created to parse data and store as CSV file</li>
+                <li>Script to run daily and post data set to AWS S3 bucket</li>
+            </ul>
+
+            <h4>Amount Collected:</h4>
+            <ul>
+                <li>Approximately 183,300 records collected</li>
+            </ul>
+
+            <h4>Coverage Dates:</h4>
+            <ul>
+                <li>October 1988 to March 2022</li>
+            </ul>
+
+            <hr />
+
+            <!-- GitHub Summary Section -->
+            <h3>GitHub</h3>
+
+            <h4>Collection Strategy:</h4>
+            <ul>
+                <li>Accessed Github data repositories via API</li>
+                <li>Python script used to retrieve and parse data</li>
+                <li>AWS Services to automate retrieval and storage</li>
+            </ul>
+
+            <h4>Amount Collected:</h4>
+            <ul>
+                <li>Over 1,000 records collected per data set </li>
+            </ul>
+
+            <h4>Coverage Dates:</h4>
+            <ul>
+                <li>February 2013 to April 2022</li>
+            </ul>
+
+            <hr />
+
+            <!-- PhishTank Summary Section -->
+            <h3>PhishTank</h3>
+
+            <h4>Collection Strategy:</h4>
+            <ul>
+                <li>Accessed PhishTank data through a provided URL</li>
+                <li>Python script used to retrieve data</li>
+                <li>AWS Services to automate retrieval and storage</li>
+            </ul>
+
+            <h4>Amount Collected:</h4>
+            <ul>
+                <li>Approximately 7,000 records collected</li>
+            </ul>
+
+            <h4>Coverage Dates:</h4>
+            <ul>
+                <li>February 2011 to April 2022</li>
+            </ul>
+            
+            
+            
             <table class="mobile-labels" role="grid">
                 <thead role="rowgroup">
                     <tr role="row">
