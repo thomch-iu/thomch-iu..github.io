@@ -1,0 +1,86 @@
+---
+layout: iu-template
+title: "Data Sources : Shodan"
+---
+
+<div class="extra-space bg-none section" id="content">
+    <div class="row">
+        <div class="layout">
+            <div class="text">
+                <h2>Shodan</h2>
+
+                <br>
+
+                <h3>Overview</h3>
+                <ul>
+                    <li>
+                        Most data for Shodan comes from:
+                    </li>
+                    <ul>
+                        <li>
+                            Banners- information held about software that is on a device
+                        </li>
+                        <ul>
+                            <li>
+                                The services that are ran on devices are what Shodan collects data on
+                            </li>
+                        </ul>
+                    </ul>
+                    <li>Shodan’s objective: give a full perspective of the Internet</li>
+                    <li>Information gained from Shodan:</li>
+                    <ul>
+                        <li>Network Security- watches all devices that have access to the internet in your company</li>
+                        <li>Market Research- products that are trending for consumer usage</li>
+                        <li>Cyber Risk- gives entail on online weaknesses to your company</li>
+                        <li>IoT- analyzes the increasing trends of smart device usage</li>
+                        <li>Tracking Ransomware- tracks how many devices have been affected by ransomware</li>
+                    </ul>
+                </ul>
+
+                <br>
+
+                <h3>Collection Strategy:</h3>
+                <ul>
+                    <li>
+                        Shodan data was collected using a customized API and Python Script.
+                    </li>
+                    <li>
+                        The application Postman was used to generate a client API call and dump the response into a JSON format:
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/assets/images/Shodan_Collection.png" alt="Shodan collection through Postman" />
+                        </div>
+                    </li>
+                    <li>
+                        This approach was taken to test the API call and determine if the data received was relevant before creating an automated method of data collection.
+                    </li>
+                    <li>
+                        A customized Python script was created to automate the API call and convert the JSON response into a CSV file for analysis:
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/assets/images/Shodan_Script.png" alt="Shodan Python Script" />
+                        </div>
+                    </li>
+                    <li>
+                        The script was created so that the API could be called programmatically each day to collect the data set and store into an AWS S3 bucket.
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Summary Statistics:</h3>
+                <ul>
+                    <li>
+                        Records Collected: Over 1,500 records collected per data set
+                    </li>
+                    <li>
+                        Coverage Dates: January 2012 to April 2022
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Sample Data:</h3>
+                <li><a href="/sample-data/shodan.html">Link</a>
+            </div>
+        </div>
+    </div>
+</div>

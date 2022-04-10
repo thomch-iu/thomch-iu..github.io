@@ -1,0 +1,76 @@
+---
+layout: iu-template
+title: "Data Sources : GitHub"
+---
+
+<div class="extra-space bg-none section" id="content">
+    <div class="row">
+        <div class="layout">
+            <div class="text">
+                <h2>GitHub</h2>
+
+                <br>
+
+                <h3>Overview</h3>
+                <ul>
+                    <li>
+                        Github is a collection of data repositories that can glean intelligence related to customized source code, exploits, and vulnerabilities specific to the payment industry.
+                    </li>
+                    <li>
+                        The data is accumulated via user submission of files and code for versioning control, storage, and retrieval.
+                    </li>
+                    <li>
+                        There are hundreds of thousands of Github repositories available for searching and cloning.
+                    </li>
+                    <li>
+                        Github is a vital data source to gather threat intelligence on customized software exploitations and vulnerabilities related to the payment industry. It is also a highly useful tool for more holistic OSINT data.
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Collection Strategy:</h3>
+                <ul>
+                    <li>
+                        The Github data was collected using a customized API and Python Script.
+                    </li>
+                    <li>
+                        The application Postman was used to generate a client API call and dump the response into a JSON format:
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/assets/images/GitHub_Collection.png" alt="GitHub collection through Postman" />
+                        </div>
+                    </li>
+                    <li>
+                        This approach was taken to test the API call and determine if the data received was relevant before creating an automated method of data collection.
+                    </li>
+                    <li>
+                        A customized Python script was created to automate the API call and convert the JSON response into a CSV file for analysis:
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/assets/images/GitHub_Script.png" alt="GitHub Python Script" />
+                        </div>
+                    </li>
+                    <li>
+                        The script was created so that the API could be called programmatically each day to collect the data set and store into an AWS S3 bucket.
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Summary Statistics:</h3>
+                <ul>
+                    <li>
+                        Records Collected: Over 1,000 records per data set
+                    </li>
+                    <li>
+                        Coverage Dates: February 2013 - April 2022
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Sample Data:</h3>
+                <li><a href="/sample-data/github.html">Link</a>
+            </div>
+        </div>
+    </div>
+</div>
