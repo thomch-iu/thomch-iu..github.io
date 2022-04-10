@@ -21,6 +21,96 @@ title: "Data Sources"
     <div class="row">
         <div class="layout">
             <h2>Summaries:</h2>
+            <table class="mobile-labels" role="grid">
+                <thead role="rowgroup">
+                    <tr role="row">
+                        <th scope="col" role="columnheader"></th>
+                        <th scope="col" role="columnheader">Shodan</th>
+                        <th scope="col" role="columnheader">National Vulnerability Database</th>
+                        <th scope="col" role="columnheader">GitHub</th>
+                        <th scope="col" role="columnheader">PhishTank</th>
+                    </tr>
+                </thead>
+                <tbody role="rowgroup">
+                    <tr role="row">
+                        <td data-label="collection_strategy" role="cell">Collection Strategy</td>
+                        <td data-label="shodan" role="cell">
+                            <ul>
+                                <li>Accessed Shodan exploit database via API</li>
+                                <li>Python script created to parse data and store as CSV file</li>
+                                <li>Script to run daily and post data set to AWS S3 bucket</li>
+                            </ul>
+                        </td>
+                        <td data-label="nvd" role="cell">
+                            <ul>
+                                <li>Accessed NVD data via API</li>
+                                <li>Python script created to parse data and store as CSV file</li>
+                                <li>Script to run daily and post data set to AWS S3 bucket</li>
+                            </ul>
+                        </td>
+                        <td data-label="github" role="cell">
+                            <ul>
+                                <li>Accessed Github data repositories via API</li>
+                                <li>Python script used to retrieve and parse data</li>
+                                <li>AWS Services to automate retrieval and storage</li>
+                            </ul>
+                        </td>
+                        <td data-label="phishtank" role="cell">
+                            <ul>
+                                <li>Accessed PhishTank data through a provided URL</li>
+                                <li>Python script used to retrieve data</li>
+                                <li>AWS Services to automate retrieval and storage</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr role="row">
+                        <td data-label="amount_collected" role="cell">Data Amount Collected</td>
+                        <td data-label="shodan" role="cell">
+                            <ul>
+                                <li>Over 1,500 records collected per data set</li>
+                            </ul>
+                        </td>
+                        <td data-label="nvd" role="cell">
+                            <ul>
+                                <li>Approximately 183,300 records collected</li>
+                            </ul>
+                        </td>
+                        <td data-label="github" role="cell">
+                            <ul>
+                                <li>Over 1,000 records collected per data set </li>
+                            </ul>
+                        </td>
+                        <td data-label="phishtank" role="cell">
+                            <ul>
+                                <li>Approximately 7,000 records collected</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr role="row">
+                        <td data-label="coverage_dates" role="cell">Coverage Dates</td>
+                        <td data-label="shodan" role="cell">
+                            <ul>
+                                <li>January 2012 to Current</li>
+                            </ul>
+                        </td>
+                        <td data-label="nvd" role="cell">
+                            <ul>
+                                <li>October 1988 to March 2022</li>
+                            </ul>
+                        </td>
+                        <td data-label="github" role="cell">
+                            <ul>
+                                <li>February 2013 to April 2022</li>
+                            </ul>
+                        </td>
+                        <td data-label="phishtank" role="cell">
+                            <ul>
+                                <li>February 2011 to April 2022</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
