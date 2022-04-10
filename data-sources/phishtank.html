@@ -8,38 +8,69 @@ title: "Data Sources: PhishTank"
         <div class="layout">
             <div class="text">
                 <h2>PhishTank</h2>
+                
                 <br>
+
                 <h3>Overview</h3>
                 <ul>
-                    <li>The NVD is a U.S. government repository of standards-based vulnerability management data.</li>
-                    <li>The data comes from analysis of common vulnerabilities and exposures (CVE) records that has been published to the CVE dictionary.</li>
-                    <li>There are currently over 183,000 CVE records of data available for threat trending and analysis.</li>
-                    <li>This data source is extremely valuable because each record in the NVD database has been analyzed to specific government standards of quality and completeness. Searches can be customized specific to electronic payment assets.</li>
-                    <li>The data includes security checklist references, security related software flaws, misconfigurations, product names and impact metrics pertinent to the electronic payment industry and beyond.</li>
+                    <li>
+                        PhishTank is an open-source site (operated by Cisco) that allows individuals to publish, upload, and verify malicious URLs.
+                    </li>
+                    <li>
+                        With phishing being a top cyberthreat to the financial industry, this data will provide significant value and insight for identifying malicious URLs.
+                    </li>
+                    <li>
+                        Monitoring reports and looking for similar URLs can help companies alert consumers of potential phishing attempts.
+                    </li>
+                    <li>
+                        An influx of phishing reports for malicious URLs mimicking a company’s site can indicate the overall business/industry may be a susceptible target of an attack.
+                    </li>
+                    <li>
+                        PhishTank data is publicly available through a link to download an ongoing CSV of their data.
+                    </li>
+
                 </ul>
+
                 <br>
+
                 <h3>Collection Strategy:</h3>
                 <ul>
-                    <li>The application Postman was used to generate a client API call and dump the response into a JSON format:
+                    <li>
+                        The PhishTank data was collected using a provided endpoint and a combination of AWS services
+                    </li>
+                    <li>
+                        PhishTank’s data is updated every hour, so an automated retrieval and storage process has been set up to ensure the analyses reflect near real-time.
+                    </li>
+                    <li>
+                        A Lambda Function has been setup with a Python script to retrieve PhishTank’s CSV and upload it to an S3 Bucket.
                         <div style="width: 100%; text-align: center;">
-                            <img src="/thomch-iu-github/assets/images/NVD_Collection.png" alt="NVD collection through Postman" />
+                            <img src="/thomch-iu-github/assets/images/PhishTank_Script.png" alt="Lambda Function of a Python Script to interact with PhishTank" />
                         </div>
                     </li>
-                    <li>This approach was taken to test the API call and determine if the data received was relevant before creating an automated method of data collection.</li>
-                    <li>A customized Python script was created to automate the API call and convert the JSON response into a CSV file for analysis:
+                    <li>
+                        A Rule has been created in Amazon EventBridge to automate the script’s execution every 30 minutes (if the initial retrieval fails, try again in 30 minutes - PhishTank has rate limiting).
                         <div style="width: 100%; text-align: center;">
-                            <img src="/thomch-iu-github/assets/images/NVD_Script.png" alt="NVD Python Script" />
+                            <img src="/thomch-iu-github/assets/images/PhishTank_Rule.png" alt="EventBridge Rule to retrieve from PhishTank" />
                         </div>
                     </li>
-                    <li>The script was created so that the API could be called programmatically each day to collect the data set and store into an AWS S3 bucket.</li>
+                    <li>
+                        The S3 Bucket stores the new version every hour (previous versions are stored as backups).
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/PhishTank_Collection.png" alt="S3 Bucket containing PhishTank data" />
+                        </div>
+                    </li>
                 </ul>
+
                 <br>
+
                 <h3>Summary Statistics:</h3>
                 <ul>
-                    <li>Records Collected: ~183,300</li>
-                    <li>Coverage Dates: October 1988 - March 2022</li>
+                    <li>Records Collected: ~7,000</li>
+                    <li>Coverage Dates: February 2011 to April 2022</li>
                 </ul>
+
                 <br>
+
                 <h3>Sample Data:</h3>
                 <a href="#">Link</a>
             </div>
