@@ -1,0 +1,48 @@
+---
+layout: iu-template
+title: "Data Sources: PhishTank"
+---
+
+<div class="extra-space bg-none section" id="content">
+    <div class="row">
+        <div class="layout">
+            <div class="text">
+                <h2>PhishTank</h2>
+                <br>
+                <h3>Overview</h3>
+                <ul>
+                    <li>The NVD is a U.S. government repository of standards-based vulnerability management data.</li>
+                    <li>The data comes from analysis of common vulnerabilities and exposures (CVE) records that has been published to the CVE dictionary.</li>
+                    <li>There are currently over 183,000 CVE records of data available for threat trending and analysis.</li>
+                    <li>This data source is extremely valuable because each record in the NVD database has been analyzed to specific government standards of quality and completeness. Searches can be customized specific to electronic payment assets.</li>
+                    <li>The data includes security checklist references, security related software flaws, misconfigurations, product names and impact metrics pertinent to the electronic payment industry and beyond.</li>
+                </ul>
+                <br>
+                <h3>Collection Strategy:</h3>
+                <ul>
+                    <li>The application Postman was used to generate a client API call and dump the response into a JSON format:
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/NVD_Collection.png" alt="NVD collection through Postman" />
+                        </div>
+                    </li>
+                    <li>This approach was taken to test the API call and determine if the data received was relevant before creating an automated method of data collection.</li>
+                    <li>A customized Python script was created to automate the API call and convert the JSON response into a CSV file for analysis:
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/NVD_Script.png" alt="NVD Python Script" />
+                        </div>
+                    </li>
+                    <li>The script was created so that the API could be called programmatically each day to collect the data set and store into an AWS S3 bucket.</li>
+                </ul>
+                <br>
+                <h3>Summary Statistics:</h3>
+                <ul>
+                    <li>Records Collected: ~183,300</li>
+                    <li>Coverage Dates: October 1988 - March 2022</li>
+                </ul>
+                <br>
+                <h3>Sample Data:</h3>
+                <a href="#">Link</a>
+            </div>
+        </div>
+    </div>
+</div>
