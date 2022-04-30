@@ -176,6 +176,151 @@ title: "Analyses : URL Classification"
                         <b>Step 5 :</b> Pass the dataset through a Random Forest algorithm in WEKA to test the predictive abilities of classifying URLs as malicious and the overall accuracy of the model
                     </li>
                 </ul>
+                <br>
+
+                <hr>
+
+                <h3>Key Insights and Intelligence</h3>
+
+                <br>
+
+                <h4>Overview</h4>
+                <ul>
+                    <li>
+                        To assist with classification, the Random Forest algorithm was used on the datasets. WEKA was used as the software tool to execute the process.
+                    </li>
+                    <li>
+                        The dataset contains <i>9,220</i> instances (URLs).
+                    </li>
+                    <li>
+                        <i>66%</i> of the dataset was used for training and the remainder was used to test the model.
+                    </li>
+                    <li>
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/weka-overview.png" alt="Initial Overview of WEKA for URL Classification" />
+                        </div>
+                    </li>
+                </ul>
+                <br>
+
+                <h4>Initial Results</h4>
+                <ul>
+                    <li>
+                        Prior to performing any post-processing, the initial dataset was passed through a Random Forest to see how it would perform with fewer attributes.
+                    </li>
+                    <li>
+                        For this analysis, the two attributes were:
+                    </li>
+                    <ul>
+                        <li>
+                            <i>url</i>
+                        </li>
+                        <li>
+                            <i>is_malicious</i>
+                        </li>
+                    </ul>
+                    <li>
+                        From the initial passthrough, the model correctly classified <i>94.4179%</i> of the URLs as malicious or not.
+                    </li>
+                    <li>
+                        Of the <i>3,135</i> instances tested, <i>2,960</i> of the instances were correctly classified as malicious while <i>175</i> instances were incorrectly classified as not malicious when they were malicious (false positives).
+                    </li>
+                    <li>
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/weka-initial-results.png" alt="Initial results from WEKA for URL Classification" />
+                        </div>
+                    </li>
+                </ul>
+                <br>
+
+                <h4>Post-Processing Results</h4>
+                <ul>
+                    <li>
+                        After testing the precision of the initial dataset with <i>2</i> attributes, the full/final dataset was used with all <i>7</i> attributes.
+                    </li>
+                    <li>
+                        With the additional features included that outline specific characteristics of the URLs, the hope/expectation is that the classification model will have a better likelihood of correctly classifying the URLs.
+                    </li>
+                    <li>
+                        With more attributes, the model was significantly more precise and correctly classified <i>99.0431%</i> of the URLs as malicious or not.
+                    </li>
+                    <li>
+                        Of the <i>3,135</i> instances tested, <i>2,960</i> of the instances were correctly classified while <i>30</i> instances were incorrectly classified as not malicious when they were malicious (false positives).
+                    </li>
+                    <li>
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/weka-post-processing-results.png" alt="Post-processing results from WEKA for URL Classification" />
+                        </div>
+                    </li>
+                </ul>
+                <br>
+
+                <h4>Smaller Dataset</h4>
+                <ul>
+                    <li>
+                        While the model was significantly more precise with additional features, the ratio of safe URLs to malicious URLs was about <i>500</i> to <i>8000</i>, or <i>1:16</i>. This could potentially skew the results due to class imbalance.
+                    </li>
+                    <li>
+                        Our Team wanted to test the effectiveness of adjusting the overall dataset (with 7 attributes) to a closer ratio.
+                    </li>
+                    <li>
+                        As Moz.com only provides the top <i>500</i> URLs, the data from PhishTank was reduced to <i>1,000</i> URLs.
+                    </li>
+                    <li>
+                        The count of records in the new dataset was <i>1,500</i>:
+                    </li>
+                    <ul>
+                        <li>
+                            <i>2/3 (1,000)</i> of the URLs are malicious.
+                        </li>
+                        <li>
+                            <i>1/3 (500)</i> of the URLs are not malicious.
+                        </li>
+                    </ul>
+                    <li>
+                        With a smaller dataset and closer ratio, the model correctly classified 100% of the URLs as malicious or not.
+                    </li>
+                    <li>
+                        All <i>510</i> instances tested were correctly classified:
+                    </li>
+                    <ul>
+                        <li>
+                            <i>346</i> instances were correctly classified as malicious URLs.
+                        </li>
+                        <li>
+                            <i>164</i> instances were correctly classified as non-malicious URLs.
+                        </li>
+                    </ul>
+                    <li>
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/weka-smaller-dataset-results.png" alt="Results from WEKA with a smaller dataset for URL Classification" />
+                        </div>
+                    </li>
+                </ul>
+                <br>
+
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li>
+                        While phishing is one of the largest threats to the financial industry, it also remains a threat to other industries. Although the dataset was more general (vs. a specific industry), the intelligence gathered from this analysis can be applied and provide value to the financial industry.
+                    </li>
+                    <li>
+                        Looking at additional characteristics of a URL can help with identifying if they are malicious.
+                    </li>
+                    <ul>
+                        <li>
+                            Malicious URLs averaged a length of <i>~52.94</i> characters, <i>~4.55</i> digits, and <i>~8.51</i> symbols.
+                        </li>
+                        <li>
+                            Non-malicious URLs averaged a length of <i>~11.47</i> characters, <i>0.02</i> digits, and <i>~1.22</i> symbols (see next slide for observation).
+                        </li>
+                    </ul>
+                    <li>
+                        Having a dataset with a closer balance of classes helps the classification model be more precise.
+                    </li>
+                </ul>
+                <br>
+
             </div>
         </div>
     </div>
