@@ -1,0 +1,177 @@
+---
+layout: iu-template
+title: "Analyses : URL Classification"
+---
+
+<div class="extra-space bg-none section" id="content">
+    <div class="row">
+        <div class="layout">
+            <div class="text">
+                <h2>URL Classification</h2>
+
+                <br>
+
+                <h3>Analytical Approaches and Justification</h3>
+
+                <br>
+
+                <h4>Overview</h4>
+                <ul>
+                    <li>
+                        <b>Task:</b> Analyze data from PhishTank to assist with classifying URLs as malicious.
+                    </li>
+                    <li>
+                        <b>Value:</b> Being able to identify the maliciousness of URLs can save individuals and organizations from making extremely costly mistakes. 
+                    </li>
+                    <ul>
+                        <li>
+                            Companies can use this intelligence to flag URLs as risky.
+                        </li>
+                        <li>
+                            While it is ultimately up to the user to determine if they click a link, being able to provide a potential warning is extremely valuable.
+                        </li>
+                    </ul>
+                    <li>
+                        Potential Value: Identifying specific features from the URLs (ex: number of  symbols/digits/etc.) to see if they can assist with accuracy of predictions. 
+                    </li>
+                </ul>
+
+                <h4>Data Additions</h4>
+                <ul>
+                    <li>
+                        The current dataset contains approximately 8,000 malicious URLs.
+                    </li>
+                    <li>
+                        With the end goal being to classify if a URL is malicious, additional data needs to be added with valid/safe URLs to help train the model.
+                    </li>
+                    <li>
+                        Moz.com provides a CSV of some of the most popular websites.
+                    </li>
+                    <ul>
+                        <li>
+                            The dataset is limited to 500 records.
+                        </li>
+                        <li>
+                            <div style="width: 100%; text-align: center;">
+                                <img src="/thomch-iu-github/assets/images/Moz-Sample-Sites.png" alt="Moz.com Sample Websites" />
+                            </div>
+                        </li>
+                    </ul>
+                </ul>
+
+                <h4>Feature Limitations</h4>
+                <ul>
+                    <li>
+                        The data provided by PhishTank is very valuable; however, it lacks detailed information.
+                    </li>
+                    <li>
+                        Two of the provided columns include "verified" and "online" but they will always be "yes" for our data set due to the nature of PhishTank's file.
+                    </li>
+                    <li>
+                        While the "target" column has a handful of records relating to the financial industry, the vast majority is classified as "Other".
+                    </li>
+                    <li>
+                        <div style="width: 100%; text-align: center;">
+                            <img src="/thomch-iu-github/assets/images/phishtank-original-sample.png" alt="PhishTank Sample Data before pre-processing" />
+                        </div>
+                    </li>
+                </ul>
+
+                <h4>Feature Additions</h4>
+                <ul>
+                    <li>
+                        To assist with the classification model, post-processing was performed on the data to provide additional features.
+                    </li>
+                    <li>
+                        The following columns were added to the dataset:
+                    </li>
+                    <ul>
+                        <li>
+                            <b><i>is_malicious</i></b> = Indicates if a URL is malicious
+                        </li>
+                        <li>
+                            <b><i>length</i></b> = Length of the URL
+                        </li>
+                        <li>
+                            <b><i>num_digits</i></b> = Number of digits in the URL
+                        </li>
+                        <li>
+                            <b><i>has_digits</i></b> = Indicates if the URL has digits
+                        </li>
+                        <li>
+                            <b><i>num_symbols</i></b> = Number of symbols in the URL
+                        </li>
+                        <li>
+                            <b><i>has_symbols</i></b> = Indicates if the URL has symbols
+                        </li>
+                    </ul>
+                </ul>
+
+                <h4>Final Dataset</h4>
+                <ul>
+                    <li>
+                        After the post-processing, the final dataset includes a combination of 500 safe URLs and approximately 8,000 malicious URLs.
+                    </li>
+                    <li>
+                        The attributes in the dataset are:
+                    </li>
+                </ul>
+                <div>
+                    <div style="float: left; width: 50%;">
+                        <ul>
+                            <li>
+                                <i>url</i>
+                            </li>
+                            <li>
+                                <i>is_malicious</i>
+                            </li>
+                            <li>
+                                <i>length</i>
+                            </li>
+                            <li>
+                                <i>num_digits</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: left; width: 50%;">
+                        <ul>
+                            <li>
+                                <i>has_digits</i>
+                            </li>
+
+                            <li>
+                                <i>num_symbols</i>
+                            </li>
+
+                            <li>
+                                <i>has_symbols</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <img src="/thomch-iu-github/assets/images/phishtank-cleaned-sample.png" alt="PhishTank Sample Data after pre-processing" />
+                </div>
+
+                <h4>Process</h4>
+                <ul>
+                    <li>
+                        <b>Step 1 :</b> Gather PhishTank data from CSV file stored in S3 Bucket
+                    </li>
+                    <li>
+                        <b>Step 2 :</b> Gather Safe URL data from CSV file provided by Moz.com
+                    </li>
+                    <li>
+                        <b>Step 3 :</b> Combine datasets into a single CSV file
+                    </li>
+                    <li>
+                        <b>Step 4 :</b> Post-process the data to identify additional features (ex: malicious, number of symbols/digits, etc.)
+                    </li>
+                    <li>
+                        <b>Step 5 :</b> Pass the dataset through a Random Forest algorithm in WEKA to test the predictive abilities of classifying URLs as malicious and the overall accuracy of the model
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
