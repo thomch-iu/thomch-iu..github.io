@@ -44,19 +44,19 @@ title: "Data Sources: PhishTank"
                     <li>
                         A Lambda Function has been setup with a Python script to retrieve PhishTank’s CSV and upload it to an S3 Bucket.
                         <div style="width: 100%; text-align: center;">
-                            <img src="/thomch-iu-github/assets/images/PhishTank_Script.png" alt="Lambda Function of a Python Script to interact with PhishTank" />
+                            <img src="/assets/images/PhishTank_Script.png" alt="Lambda Function of a Python Script to interact with PhishTank" />
                         </div>
                     </li>
                     <li>
                         A Rule has been created in Amazon EventBridge to automate the script’s execution every 30 minutes (if the initial retrieval fails, try again in 30 minutes - PhishTank has rate limiting).
                         <div style="width: 100%; text-align: center;">
-                            <img src="/thomch-iu-github/assets/images/PhishTank_Rule.png" alt="EventBridge Rule to retrieve from PhishTank" />
+                            <img src="/assets/images/PhishTank_Rule.png" alt="EventBridge Rule to retrieve from PhishTank" />
                         </div>
                     </li>
                     <li>
                         The S3 Bucket stores the new version every hour (previous versions are stored as backups).
                         <div style="width: 100%; text-align: center;">
-                            <img src="/thomch-iu-github/assets/images/PhishTank_Collection.png" alt="S3 Bucket containing PhishTank data" />
+                            <img src="/assets/images/PhishTank_Collection.png" alt="S3 Bucket containing PhishTank data" />
                         </div>
                     </li>
                 </ul>
@@ -72,7 +72,7 @@ title: "Data Sources: PhishTank"
                 <br>
 
                 <h3>Sample Data:</h3>
-                <li><a href="/thomch-iu-github/sample-data/phishtank.html">Link</a>
+                <li><a href="/sample-data/phishtank.html">Link</a>
             </div>
         </div>
     </div>
