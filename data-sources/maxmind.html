@@ -1,0 +1,59 @@
+---
+layout: iu-template
+title: "Data Sources: Maxmind DB"
+---
+
+<div class="extra-space bg-none section" id="content">
+    <div class="row">
+        <div class="layout">
+            <div class="text">
+                <h2>Maxmind DB</h2>
+                
+                <br>
+
+                <h3>Overview</h3>
+                <ul>
+                    <li>A database that maps an IP address to a Geolocation.</li>
+                    <li>For this project the companies' Country geolocation data is used.</li>
+                    <li>Data used by security researchers and marketers alike.</li>
+                    <li>Used the free GeoLite2 Country dataset</li>
+                    <li>Downloaded binary Country database for analysis</li>
+                    <li>Downloaded csv Country database for display in presentation</li>
+                    <li>Same data in both databases</li>
+
+                </ul>
+                <div style="width: 100%; text-align: center;">
+                    <img src="/assets/images/maxmind_download_page.png" alt="Maxmind download page" />
+                </div>
+                <br>
+
+                <h3>Collection Strategy:</h3>
+                <ul>
+                    <li>
+                        Accessed data through company's GeoLite2 dataset download page
+
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Summary Statistics:</h3>
+                <ul>
+                    <li>Records Collected: 
+                        <ul>
+                            <li>Roughly 250 countries / governmental areas</li>
+                            <li>Roughly 37,000 IPv4 blocks</li>
+                            <li>Roughly 26,000 IPv6 blocks</li>
+                        </ul>
+                    </li>
+                    <li>Coverage Dates: April 2022</li>
+                </ul>
+
+                <br>
+
+                <h3>Sample Data:</h3>
+                <li><a href="/sample-data/maxmind.html">Link</a>
+            </div>
+        </div>
+    </div>
+</div>
