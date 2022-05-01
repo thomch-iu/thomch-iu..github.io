@@ -1,15 +1,113 @@
 ---
 layout: iu-template
-title: "Analyses"
+title: "Analyses : Text Mining"
 ---
 
 <div class="extra-space bg-none section" id="content">
     <div class="row">
         <div class="layout">
-            <ul>
-                <li><a href="/analyses/text-mining.html">Text Mining</a></li>
-                <li><a href="/analyses/url-classification.html">URL Classification</a></li>
-            </ul>
+            <div class="text">
+                <h2>Text Mining</h2>
+
+                <br>
+
+                <h3>Analytical Approaches and Justification</h3>
+
+                <br>
+
+                <h4>Overview</h4>
+                <ul>
+                    <li>
+                        <b>Task:</b> Gather data regarding the most vulnerabilities in Payment assets (e.g. word count).
+                    </li>
+                    <li>
+                        <b>Value:</b> Can determine the most vulnerable assets by the most critical threats. 
+                    </li>
+                    <ul>
+                        <li>
+                            Companies can use this intelligence to flag URLs as risky.
+                        </li>
+                        <li>
+                            While it is ultimately up to the user to determine if they click a link, being able to provide a potential warning is extremely valuable.
+                        </li>
+                    </ul>
+                    <li>
+                        Potential Value: Identifying specific features from the URLs (ex: number of  symbols/digits/etc.) to see if they can assist with accuracy of predictions. 
+                    </li>
+                </ul>
+                <br>
+
+                <h4>Process</h4>
+                <ul>
+                    <li>
+                        <b>Step 1 :</b> Gathered NVD data source CSV file from AWS data repository
+                    </li>
+                    <li>
+                        <b>Step 2 :</b> Copied text from description field into text file for all 2022 records (Approx. 3,500)
+                    </li>
+                    <li>
+                        <b>Step 3 :</b> Preprocessed the data - Stop Words and Stemming by determining
+                    </li>
+                    <ul>
+                        <li>
+                            Removed irrelevant words “the”, “a”, “of”, etc.
+                        </li>
+                        <li>
+                            Reduced words down to their root word “pay = payment, payments,” “bank = banks”, “
+                        </li>
+                    <li>
+                        <b>Step 4 :</b> Used “databasic.io” to find the most commonly used words to describe the vulnerabilities and create visualizations
+                    </li>
+                    <li>
+                        <b>Next Steps :</b> Find vulnerabilities most relevant to the identified threats and determine what systems, OS, and platforms they specifically refer to. This is how we will reach our stated goal.
+                    </li>
+                </ul>
+                <br>
+
+                <hr>
+                <br>
+
+                <h3>Key Insights and Intelligence</h3>
+
+                <br>
+
+                <h4>Results</h4>
+                <ul>
+                    <li>
+                        Emerging Threats: Top Three Threats Identified from Data Set:
+                    </li>
+                    <ul>
+                        <li>
+                            Denial of Service Attacks
+                        </li>
+                        <li>
+                            Cross-Site Scripting
+                        </li>
+                        <li>
+                            Remote Code Execution
+                        </li>
+                    </ul>
+                    <li>
+                        Types of Infrastructure Threat Actors are targeting to exploit industry:
+                    </li>
+                    <ul>
+                        <li>
+                            Compromised Operating systems
+                        </li>
+                        <li>
+                            Compromised Applications
+                        </li>
+                        <li>
+                            Compromised Hardware (routers, switches, servers, etc.)
+                        </li>
+                        <li>
+                            Compromised Databases (Oracle, SQL, DB2, etc)
+                        </li>
+                    </ul>
+                </ul>
+                <br>
+
+            </div>
         </div>
     </div>
 </div>
