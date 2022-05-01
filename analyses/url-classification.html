@@ -79,7 +79,7 @@ title: "Analyses : URL Classification"
                 <h4>Feature Additions</h4>
                 <ul>
                     <li>
-                        To assist with the classification model, post-processing was performed on the data to provide additional features.
+                        To assist with the classification model, pre-processing was performed on the data to provide additional features.
                     </li>
                     <li>
                         The following columns were added to the dataset:
@@ -110,7 +110,7 @@ title: "Analyses : URL Classification"
                 <h4>Final Dataset</h4>
                 <ul>
                     <li>
-                        After the post-processing, the final dataset includes a combination of <i>500</i> safe URLs and approximately <i>8,000</i> malicious URLs.
+                        After the pre-processing, the final dataset includes a combination of <i>500</i> safe URLs and approximately <i>8,000</i> malicious URLs.
                     </li>
                     <li>
                         The attributes in the dataset are:
@@ -166,7 +166,7 @@ title: "Analyses : URL Classification"
                         <b>Step 3 :</b> Combine datasets into a single CSV file
                     </li>
                     <li>
-                        <b>Step 4 :</b> Post-process the data to identify additional features (ex: malicious, number of symbols/digits, etc.)
+                        <b>Step 4 :</b> Pre-process the data to identify additional features (ex: malicious, number of symbols/digits, etc.)
                     </li>
                     <li>
                         <b>Step 5 :</b> Pass the dataset through a Random Forest algorithm in WEKA to test the predictive abilities of classifying URLs as malicious and the overall accuracy of the model
@@ -201,7 +201,7 @@ title: "Analyses : URL Classification"
                 <h4>Initial Results</h4>
                 <ul>
                     <li>
-                        Prior to performing any post-processing, the initial dataset was passed through a Random Forest to see how it would perform with fewer attributes.
+                        Prior to performing any pre-processing, the initial dataset was passed through a Random Forest to see how it would perform with fewer attributes.
                     </li>
                     <li>
                         For this analysis, the two attributes were:
@@ -226,7 +226,7 @@ title: "Analyses : URL Classification"
                 </div>
                 <br>
 
-                <h4>Post-Processing Results</h4>
+                <h4>Pre-Processing Results</h4>
                 <ul>
                     <li>
                         After testing the precision of the initial dataset with <i>2</i> attributes, the full/final dataset was used with all <i>7</i> attributes.
@@ -242,7 +242,7 @@ title: "Analyses : URL Classification"
                     </li>
                 </ul>
                 <div style="width: 100%; text-align: center;">
-                    <img src="/thomch-iu-github/assets/images/weka-post-processing-results.png" alt="Post-processing results from WEKA for URL Classification" />
+                    <img src="/thomch-iu-github/assets/images/weka-post-processing-results.png" alt="Pre-processing results from WEKA for URL Classification" />
                 </div>
                 <br>
 
